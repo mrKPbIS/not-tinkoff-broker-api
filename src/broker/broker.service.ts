@@ -10,7 +10,6 @@ export class BrokerService {
     sessionId,
     from,
     to,
-    overnightsDisabled,
     account,
     name,
   }) {
@@ -20,7 +19,7 @@ export class BrokerService {
     const data = {
       from,
       to,
-      overnightsDisabled,
+      overnightsDisabled: true,
     };
     const path = `trading/user/operations?sessionId=${sessionId}`;
     const { status, payload } = await this.tinkoffApi.post(path, data);
